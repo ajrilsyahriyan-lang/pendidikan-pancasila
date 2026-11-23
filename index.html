@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netizen Berdaya - Pendidikan Kewarganegaraan Era Digital</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        civic: {
+                            red: '#dc2626',
+                            amber: '#d97706',
+                            emerald: '#059669'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="bg-brand-600 text-white p-2 rounded-xl">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-lg tracking-tight text-slate-900">Netizen<span class="text-brand-600">Berdaya</span></span>
+                        <span class="hidden sm:inline-block ml-2 text-xs font-medium px-2 py-0.5 bg-brand-50 text-brand-700 rounded-full border border-brand-200">Proyek PKN Digital</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
+                    <a href="#analisis" class="hover:text-brand-600 transition">1. Analisis Masalah</a>
+                    <a href="#strategi" class="hover:text-brand-600 transition">2. Strategi & Etika</a>
+                    <a href="#prototipe" class="hover:text-brand-600 transition">3. Prototipe Verifikasi</a>
+                    <a href="#kuis" class="hover:text-brand-600 transition">4. Uji Literasi</a>
+                    <a href="#indikator" class="hover:text-brand-600 transition">5. Indikator & Aksi</a>
+                    <a href="#anggota" class="hover:text-brand-600 transition">Tim Penyusun</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#analisis" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">1. Analisis Masalah</a>
+            <a href="#strategi" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">2. Strategi & Etika</a>
+            <a href="#prototipe" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">3. Prototipe Verifikasi</a>
+            <a href="#kuis" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">4. Uji Literasi</a>
+            <a href="#indikator" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">5. Indikator & Aksi</a>
+            <a href="#anggota" class="block py-2 px-3 rounded-lg hover:bg-slate-50 font-medium text-slate-700">Tim Penyusun</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-brand-900 to-slate-900 text-white py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center space-x-2 bg-white/10 border border-white/20 rounded-full px-3.5 py-1.5 text-xs sm:text-sm font-medium text-brand-100 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Warga Negara di Era Teknologi Digital & Keterlibatan Sipil</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-6">
+                    Membangun Netizen yang <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Cerdas, Kritis, Etis, dan Aktif</span>
+                </h1>
+                <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
+                    Platform edukasi dan kampanye kewarganegaraan digital untuk menangkal disinformasi (hoaks), menjaga etika interaksi siber, melindungi jejak digital, serta mendorong partisipasi sosial nyata di tengah masyarakat.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#prototipe" class="inline-flex items-center px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold shadow-lg shadow-brand-600/30 transition">
+                        <i data-lucide="search-check" class="w-5 h-5 mr-2"></i>
+                        Coba Prototipe Cek Fakta
+                    </a>
+                    <a href="#analisis" class="inline-flex items-center px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold transition">
+                        Pelajari Kajian PKN
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Grid -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiLz48L3N2Zz4=')] opacity-60"></div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <!-- SECTION 1: IDENTIFIKASI & ANALISIS MASALAH -->
+        <section id="analisis" class="scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Tahap 1: Identifikasi Masalah</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Analisis Perilaku Masyarakat di Ruang Digital</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    Dalam kajian Pendidikan Kewarganegaraan, ruang digital adalah ruang publik baru. Namun, rendahnya literasi memicu kerentanan sosial yang mengancam persatuan bangsa.
+                </p>
+            </div>
+
+            <!-- Fokus Masalah Utama -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm mb-8">
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="bg-red-50 text-red-600 p-4 rounded-2xl shrink-0">
+                        <i data-lucide="alert-triangle" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full mb-2">Fokus Masalah Utama Terpilih</div>
+                        <h3 class="text-xl font-bold text-slate-900">Rendahnya Literasi Digital & Cepatnya Penyebaran Hoaks Emosional</h3>
+                        <p class="text-slate-600 mt-2 text-sm sm:text-base leading-relaxed">
+                            Masyarakat cenderung membagikan informasi yang memicu emosi (marah, takut, atau fanatisme kelompok) tanpa memverifikasi sumber primer. Fenomena <em>echo chamber</em> (ruang gema) algoritma media sosial memperparah polarisasi, ujaran kebencian, hingga <em>cyberbullying</em>, sekaligus mengalihkan energi warga dari partisipasi sosial yang konstruktif menjadi sekadar "aktivisme jempol" (<em>slacktivism</em>) yang destruktif.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Dimensi Masalah Netizen -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-300 transition">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4">
+                        <i data-lucide="megaphone-off" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Disinformasi & Hoaks</h4>
+                    <p class="text-sm text-slate-600">Penyebaran berita palsu atau manipulatif akibat budaya membaca judul (<em>clickbait</em>) tanpa memeriksa kredibilitas media.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-300 transition">
+                    <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-4">
+                        <i data-lucide="message-square-warning" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Ujaran Kebencian & Bully</h4>
+                    <p class="text-sm text-slate-600">Anonimitas sering disalahgunakan untuk menyerang martabat individu/kelompok, melanggar nilai kemanusiaan (Sila ke-2).</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-300 transition">
+                    <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+                        <i data-lucide="fingerprint" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Kelalaian Jejak & Data</h4>
+                    <p class="text-sm text-slate-600">Kurangnya kesadaran privasi (<em>oversharing</em> data pribadi/KTP) dan tidak menyadari bahwa jejak digital bersifat permanen.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-300 transition">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Apatisme Sipil Digital</h4>
+                    <p class="text-sm text-slate-600">Rendahnya pemanfaatan teknologi untuk gotong royong digital, pengawasan kebijakan publik, atau literasi komunitas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: STRATEGI EDUKASI & PENCEGAHAN -->
+        <section id="strategi" class="scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Tahap 2: Strategi Pencegahan</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">4 Pilar Strategi Kewargaan Digital</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    Pendekatan komprehensif berbasis nilai Pancasila untuk mengubah perilaku pasif-reaktif menjadi warga digital yang berdaya.
+                </p>
+            </div>
+
+            <!-- Interactive Tabs for Strategy -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="flex flex-wrap border-b border-slate-200 bg-slate-50/70" id="strategy-tabs">
+                    <button onclick="switchTab('cerdas')" id="tab-cerdas" class="flex-1 py-4 px-4 text-sm font-bold text-brand-600 border-b-2 border-brand-600 bg-white transition">
+                        1. Cerdas (Keamanan & Jejak)
+                    </button>
+                    <button onclick="switchTab('kritis')" id="tab-kritis" class="flex-1 py-4 px-4 text-sm font-semibold text-slate-600 hover:text-slate-900 transition">
+                        2. Kritis (Saring Sebelum Sharing)
+                    </button>
+                    <button onclick="switchTab('etis')" id="tab-etis" class="flex-1 py-4 px-4 text-sm font-semibold text-slate-600 hover:text-slate-900 transition">
+                        3. Etis (Netiket & Empati)
+                    </button>
+                    <button onclick="switchTab('aktif')" id="tab-aktif" class="flex-1 py-4 px-4 text-sm font-semibold text-slate-600 hover:text-slate-900 transition">
+                        4. Aktif (Partisipasi Sosial)
+                    </button>
+                </div>
+
+                <div class="p-6 sm:p-8">
+                    <!-- Content 1: Cerdas -->
+                    <div id="content-cerdas" class="strategy-panel space-y-4">
+                        <div class="flex items-center space-x-3 text-brand-600">
+                            <i data-lucide="lock" class="w-6 h-6"></i>
+                            <h3 class="text-xl font-bold text-slate-900">Perlindungan Data Pribadi & Manajemen Jejak Digital</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm sm:text-base">
+                            Strategi preventif dengan melatih mahasiswa dan masyarakat mengamankan identitas digital sesuai UU Pelindungan Data Pribadi (UU PDP).
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                                <h4 class="font-semibold text-slate-900 text-sm mb-1">🛡️ Kebersihan Digital (Digital Hygiene)</h4>
+                                <p class="text-xs sm:text-sm text-slate-600">Mengaktifkan autentikasi dua faktor (2FA), tidak mengunggah foto dokumen identitas (KTP/KTM/Tiket), dan memeriksa izin aplikasi.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                                <h4 class="font-semibold text-slate-900 text-sm mb-1">👣 Jejak Digital Positif</h4>
+                                <p class="text-xs sm:text-sm text-slate-600">Setiap komentar dan unggahan terekam abadi. Bangun portofolio digital yang mencerminkan integritas akademik dan profesional.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content 2: Kritis -->
+                    <div id="content-kritis" class="strategy-panel hidden space-y-4">
+                        <div class="flex items-center space-x-3 text-amber-600">
+                            <i data-lucide="search" class="w-6 h-6"></i>
+                            <h3 class="text-xl font-bold text-slate-900">Metode Membaca Lateral (Lateral Reading)</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm sm:text-base">
+                            Mengajarkan teknik verifikasi ala pemeriksa fakta profesional: jangan hanya membaca isi situs, tetapi buka tab baru untuk mengecek reputasi sumbernya.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                            <div class="p-4 rounded-xl bg-amber-50/50 border border-amber-200">
+                                <h4 class="font-semibold text-slate-900 text-sm mb-1">1. Cek Sumber & Domain</h4>
+                                <p class="text-xs text-slate-600">Pastikan media terdaftar di Dewan Pers dan waspadai domain tiruan atau blog anonim.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-amber-50/50 border border-amber-200">
+                                <h4 class="font-semibold text-slate-900 text-sm mb-1">2. Cek Konteks Waktu & Visual</h4>
+                                <p class="text-xs text-slate-600">Gunakan <em>Reverse Image Search</em> untuk memastikan foto/video bukan peristiwa lama yang didaur ulang.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-amber-50/50 border border-amber-200">
+                                <h4 class="font-semibold text-slate-900 text-sm mb-1">3. Jeda Emosional</h4>
+                                <p class="text-xs text-slate-600">Tahan diri minimal 30 detik sebelum membagikan berita yang memicu kemarahan atau ketakutan ekstrem.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content 3: Etis -->
+                    <div id="content-etis" class="strategy-panel hidden space-y-4">
+                        <div class="flex items-center space-x-3 text-emerald-600">
+                            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                            <h3 class="text-xl font-bold text-slate-900">Etika Berkomunikasi & Penghormatan HAM Digital</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm sm:text-base">
+                            Menerapkan prinsip "Ingat Manusia di Balik Layar" serta membedakan antara kritik konstruktif terhadap kebijakan dengan penghinaan personal (<em>ad hominem</em>).
+                        </p>
+                        <div class="p-4 rounded-xl bg-emerald-50/60 border border-emerald-200 text-sm text-slate-700">
+                            <strong>Rumus T.H.I.N.K Sebelum Posting:</strong> Is it <em>True</em> (Benar)? <em>Helpful</em> (Bermanfaat)? <em>Inspiring</em> (Menginspirasi)? <em>Necessary</em> (Perlu)? <em>Kind</em> (Santun)?
+                        </div>
+                    </div>
+
+                    <!-- Content 4: Aktif -->
+                    <div id="content-aktif" class="strategy-panel hidden space-y-4">
+                        <div class="flex items-center space-x-3 text-indigo-600">
+                            <i data-lucide="globe" class="w-6 h-6"></i>
+                            <h3 class="text-xl font-bold text-slate-900">Keterlibatan Warga Negara (Digital Civic Engagement)</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm sm:text-base">
+                            Mentransformasi penggunaan media sosial dari sekadar konsumsi hiburan menjadi sarana partisipasi pembangunan dan solidaritas sosial.
+                        </p>
+                        <ul class="list-disc list-inside text-sm text-slate-600 space-y-1.5">
+                            <li>Memanfaatkan kanal pengaduan publik resmi (seperti SP4N-LAPOR!) untuk mengawal pelayanan publik.</li>
+                            <li>Menginisiasi kampanye literasi digital di lingkungan RT/RW, karang taruna, atau grup keluarga WhatsApp.</li>
+                            <li>Berpartisipasi dalam penggalangan dana sosial yang terverifikasi dan transparan.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PROTOTIPE PRODUK DIGITAL (VERIFIKASI SUMBER & LITERASI) -->
+        <section id="prototipe" class="scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Tahap 3: Produk Digital</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Prototipe Asisten Verifikasi Sumber & Deteksi Indikator Hoaks</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    Alat bantu edukasi berbasis metode <em>Lateral Reading</em> untuk melatih pengguna mengevaluasi kredibilitas sebuah pesan berantai atau tautan berita sebelum membagikannya.
+                </p>
+            </div>
+
+            <!-- Disclaimer / Catatan Penting Akademik (Sesuai Instruksi Tugas) -->
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-2xl mb-8 shadow-sm">
+                <div class="flex items-start space-x-3">
+                    <i data-lucide="info" class="w-6 h-6 text-amber-600 shrink-0 mt-0.5"></i>
+                    <div class="text-sm text-amber-950 space-y-1.5">
+                        <h4 class="font-bold text-amber-900">Transparansi Sumber Verifikasi & Keterbatasan Sistem (Wajib Dibaca)</h4>
+                        <p>
+                            <strong>1. Keterbatasan Sistem:</strong> Prototipe ini merupakan <em>alat bantu heuristik berbasis indikator bahasa dan daftar periksa verifikasi manusia</em>. Sistem ini <strong>TIDAK mengklaim mampu menentukan kebenaran mutlak suatu informasi secara otomatis</strong> karena belum terintegrasi dengan basis data AI real-time dan tetap memerlukan penilaian kritis manusia.
+                        </p>
+                        <p>
+                            <strong>2. Rujukan Sumber Verifikasi Resmi:</strong> Untuk konfirmasi fakta akhir, pengguna diarahkan merujuk ke database pemeriksa fakta terpercaya: <strong>TurnBackHoax.id (MAFINDO)</strong>, <strong>CekFakta.com</strong>, <strong>Komdigi (Aduan Konten / TrustPositif)</strong>, serta media terverifikasi <strong>Dewan Pers</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Prototype Tool -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Input Column -->
+                <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                    <div>
+                        <label for="news-input" class="block text-sm font-bold text-slate-900 mb-2">
+                            Tempelkan Teks Pesan Berantai / Judul Berita / Tautan:
+                        </label>
+                        <textarea id="news-input" rows="5" class="w-full rounded-xl border border-slate-300 p-4 text-sm text-slate-800 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition" placeholder="Contoh: VIRAL!! Sebarkan ke 10 grup WA sekarang juga sebelum dihapus pemerintah! Bantuan dana 50 juta klik link berikut..."></textarea>
+                        
+                        <!-- Sample Preset Buttons -->
+                        <div class="mt-3 flex flex-wrap items-center gap-2">
+                            <span class="text-xs font-medium text-slate-500">Coba contoh kasus:</span>
+                            <button type="button" onclick="loadSample('hoax')" class="text-xs px-3 py-1.5 rounded-lg bg-red-50 text-red-700 hover:bg-red-100 font-medium border border-red-200 transition">
+                                Contoh Pesan Provokatif
+                            </button>
+                            <button type="button" onclick="loadSample('netral')" class="text-xs px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 font-medium border border-emerald-200 transition">
+                                Contoh Berita Informatif
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Checklist Verifikasi Mandiri -->
+                    <div class="border-t border-slate-100 pt-5">
+                        <h4 class="text-sm font-bold text-slate-900 mb-3">Langkah Verifikasi Mandiri Pengguna (Centang jika sudah dilakukan):</h4>
+                        <div class="space-y-2.5 text-sm text-slate-700">
+                            <label class="flex items-start space-x-3 cursor-pointer p-2 rounded-lg hover:bg-slate-50">
+                                <input type="checkbox" class="verify-check mt-1 rounded text-brand-600 focus:ring-brand-500" value="source">
+                                <span>Saya sudah memeriksa apakah nama media/instansi pengirim resmi dan terverifikasi.</span>
+                            </label>
+                            <label class="flex items-start space-x-3 cursor-pointer p-2 rounded-lg hover:bg-slate-50">
+                                <input type="checkbox" class="verify-check mt-1 rounded text-brand-600 focus:ring-brand-500" value="date">
+                                <span>Saya sudah memastikan tanggal kejadian masih relevan (bukan konten lama yang didaur ulang).</span>
+                            </label>
+                            <label class="flex items-start space-x-3 cursor-pointer p-2 rounded-lg hover:bg-slate-50">
+                                <input type="checkbox" class="verify-check mt-1 rounded text-brand-600 focus:ring-brand-500" value="cross">
+                                <span>Saya sudah membandingkan informasi ini dengan minimal 2 sumber berita kredibel lainnya.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="analyzeContent()" class="w-full py-3.5 px-6 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md transition flex items-center justify-center">
+                        <i data-lucide="cpu" class="w-4 h-4 mr-2"></i>
+                        Evaluasi Indikator Informasi
+                    </button>
+                </div>
+
+                <!-- Output Column -->
+                <div class="lg:col-span-5 bg-slate-900 text-white p-6 sm:p-8 rounded-2xl shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-5">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Hasil Analisis Prototipe</span>
+                            <span id="status-badge" class="px-3 py-1 rounded-full text-xs font-bold bg-slate-800 text-slate-300">Menunggu Input</span>
+                        </div>
+
+                        <div id="analysis-result" class="space-y-4 text-sm text-slate-300">
+                            <p class="leading-relaxed">
+                                Masukkan teks informasi di sebelah kiri dan lengkapi daftar periksa verifikasi untuk melihat analisis indikator kebahasaan serta panduan langkah pengecekan fakta.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Direct External Verification Links -->
+                    <div class="mt-8 pt-5 border-t border-slate-800">
+                        <p class="text-xs font-semibold text-slate-400 mb-3">Tautan Rujukan Basis Data Cek Fakta Resmi:</p>
+                        <div class="grid grid-cols-2 gap-2.5 text-xs">
+                            <a href="https://turnbackhoax.id/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center py-2.5 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-blue-400 font-medium border border-slate-700 transition">
+                                TurnBackHoax.id <i data-lucide="external-link" class="w-3.5 h-3.5 ml-1.5"></i>
+                            </a>
+                            <a href="https://cekfakta.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center py-2.5 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 font-medium border border-slate-700 transition">
+                                CekFakta.com <i data-lucide="external-link" class="w-3.5 h-3.5 ml-1.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: SIMULASI & KUIS INTERAKTIF ETIKA NETIZEN -->
+        <section id="kuis" class="scroll-mt-24">
+            <div class="bg-gradient-to-br from-brand-50 to-indigo-50 rounded-3xl border border-brand-100 p-6 sm:p-10">
+                <div class="max-w-3xl mx-auto text-center mb-8">
+                    <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Tahap 4: Simulasi Pengambilan Keputusan</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Uji Refleks Kewargaan Digital Anda</h2>
+                    <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                        Bagaimana sikap Anda sebagai warga negara yang cerdas dan etis saat menghadapi situasi berikut di media sosial?
+                    </p>
+                </div>
+
+                <div id="quiz-container" class="max-w-2xl mx-auto bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
+                    <div class="flex justify-between items-center text-xs font-bold text-slate-500 mb-4">
+                        <span id="quiz-progress">Skenario 1 dari 3</span>
+                        <span id="quiz-score" class="text-brand-600">Skor: 0</span>
+                    </div>
+                    <h3 id="quiz-question" class="text-lg font-bold text-slate-900 mb-5 leading-snug">
+                        Memuat skenario...
+                    </h3>
+                    <div id="quiz-options" class="space-y-3">
+                        <!-- Options injected via JS -->
+                    </div>
+                    <div id="quiz-feedback" class="hidden mt-5 p-4 rounded-xl text-sm"></div>
+                    <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden mt-5 w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition">
+                        Lanjut ke Skenario Berikutnya
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: INDIKATOR KEBERHASILAN KAMPANYE & KOMITMEN AKSI -->
+        <section id="indikator" class="scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Tahap 5: Evaluasi Dampak</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Indikator Keberhasilan Kampanye & Solusi</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    Tolok ukur terukur (kuantitatif dan kualitatif) untuk mengevaluasi efektivitas program literasi kewargaan digital ini.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <!-- Indikator 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-full">Aspek Kognitif (Pengetahuan)</span>
+                        <i data-lucide="bar-chart-2" class="w-5 h-5 text-blue-600"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Peningkatan Skor Literasi & Deteksi Hoaks</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        Minimal <strong>80% peserta/pengguna</strong> mengalami peningkatan skor pada <em>post-test</em> (simulasi verifikasi) dibandingkan <em>pre-test</em> terkait identifikasi ciri disinformasi dan perlindungan data pribadi.
+                    </p>
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <!-- Indikator 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full">Aspek Afektif & Etika</span>
+                        <i data-lucide="message-circle-heart" class="w-5 h-5 text-emerald-600"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Penurunan Interaksi Toksik & Jeda Berbagi</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        Terbentuknya kebiasaan verifikasi sebelum menyebarkan pesan di grup komunitas (minimal <strong>75% responden</strong> melaporkan menahan diri membagikan berita yang belum terkonfirmasi).
+                    </p>
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-emerald-600 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <!-- Indikator 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-bold rounded-full">Aspek Partisipasi Sipil</span>
+                        <i data-lucide="hand-metal" class="w-5 h-5 text-purple-600"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Keterlibatan Sosial & Aksi Korektif</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        Tercapainya jangkauan kampanye edukasi minimal <strong>500 interaksi organik</strong> serta adanya aksi nyata pelaporan konten hoaks/ujaran kebencian ke kanal resmi atau koreksi santun di grup keluarga.
+                    </p>
+                    <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-purple-600 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Digital Pledge / Komitmen Warga Digital -->
+            <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="inline-flex items-center space-x-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                            <i data-lucide="award" class="w-4 h-4"></i>
+                            <span>Gerakan Partisipasi Aktif</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold">Deklarasi Netizen Cerdas & Beretika</h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Perubahan ruang digital dimulai dari satu akun: akun Anda sendiri. Tuliskan nama/inisial dan komitmen spesifik Anda untuk menciptakan ruang digital Indonesia yang sehat dan demokratis.
+                        </p>
+                        
+                        <form id="pledge-form" onsubmit="submitPledge(event)" class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                            <input type="text" id="pledge-name" required placeholder="Nama / Inisial Anda" class="rounded-xl bg-slate-800 border border-slate-700 px-4 py-3 text-sm text-white placeholder-slate-400 focus:ring-2 focus:ring-brand-500 outline-none">
+                            <select id="pledge-action" class="rounded-xl bg-slate-800 border border-slate-700 px-4 py-3 text-sm text-white focus:ring-2 focus:ring-brand-500 outline-none">
+                                <option value="Saring sebelum sharing di grup WA">Saring sebelum sharing</option>
+                                <option value="Menolak ujaran kebencian & bullying">Tolak ujaran kebencian</option>
+                                <option value="Melindungi data pribadi & privasi">Jaga keamanan data pribadi</option>
+                                <option value="Aktif menyebarkan konten edukasi positif">Sebar konten edukasi sosial</option>
+                            </select>
+                            <button type="submit" class="rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-3 transition shadow-lg shadow-emerald-600/20">
+                                Tandatangani Komitmen
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Live Pledge Feed -->
+                    <div class="lg:col-span-5 bg-slate-800/80 border border-slate-700 rounded-2xl p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold text-slate-300 uppercase">Dukungan Warga Terbaru</span>
+                            <span id="pledge-count" class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400">128 Netizen</span>
+                        </div>
+                        <div id="pledge-list" class="space-y-2.5 max-h-48 overflow-y-auto pr-1 text-xs">
+                            <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-700/70 flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-white">Raka Pratama (Mahasiswa)</span>
+                                    <p class="text-slate-400 mt-0.5">Komitmen: Saring sebelum sharing di grup WA</p>
+                                </div>
+                                <span class="text-emerald-400 font-semibold">✓ Terverifikasi</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-700/70 flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-white">Nadia Putri</span>
+                                    <p class="text-slate-400 mt-0.5">Komitmen: Menolak ujaran kebencian & bullying</p>
+                                </div>
+                                <span class="text-emerald-400 font-semibold">✓ Terverifikasi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: ANGGOTA KELOMPOK -->
+        <section id="anggota" class="scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Tim Penyusun Proyek PKN</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Anggota Kelompok</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    Disusun sebagai bagian dari tugas proyek Pendidikan Kewarganegaraan bertema Pengembangan Netizen yang Cerdas, Kritis, Etis, dan Aktif.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Anggota 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-300 hover:shadow-md transition text-center flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-white font-bold text-xl flex items-center justify-center mb-4 shadow-sm">
+                        AS
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base leading-snug">Ajril Syahriyan</h3>
+                    <span class="mt-2 inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">Anggota Kelompok</span>
+                </div>
+
+                <!-- Anggota 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-300 hover:shadow-md transition text-center flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-700 text-white font-bold text-xl flex items-center justify-center mb-4 shadow-sm">
+                        IP
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base leading-snug">I Putu Andre Lorenso Cahya Amertha</h3>
+                    <span class="mt-2 inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">Anggota Kelompok</span>
+                </div>
+
+                <!-- Anggota 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-300 hover:shadow-md transition text-center flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 text-white font-bold text-xl flex items-center justify-center mb-4 shadow-sm">
+                        FH
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base leading-snug">Fahmi Hamdani</h3>
+                    <span class="mt-2 inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">Anggota Kelompok</span>
+                </div>
+
+                <!-- Anggota 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-300 hover:shadow-md transition text-center flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 text-white font-bold text-xl flex items-center justify-center mb-4 shadow-sm">
+                        AA
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base leading-snug">Aditya Surya Anugrah</h3>
+                    <span class="mt-2 inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">Anggota Kelompok</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-20 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+            <div class="flex items-center space-x-2">
+                <i data-lucide="shield-check" class="w-5 h-5 text-brand-600"></i>
+                <span class="font-bold text-slate-800">NetizenBerdaya</span>
+                <span>— Media Edukasi Pendidikan Kewarganegaraan</span>
+            </div>
+            <p class="text-xs text-center sm:text-right">
+                Tema: Pengembangan Netizen yang Cerdas, Kritis, Etis, dan Aktif di Era Digital.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Custom Toast Notification (No alert() used) -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl border border-slate-700 flex items-center space-x-3 text-sm">
+        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0"></i>
+        <span id="toast-message">Pesan notifikasi</span>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Custom Toast Function
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+
+        // Strategy Tabs Switcher
+        function switchTab(tabId) {
+            // Hide all panels
+            document.querySelectorAll('.strategy-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+            // Reset all tab buttons
+            document.querySelectorAll('#strategy-tabs button').forEach(btn => {
+                btn.classList.remove('text-brand-600', 'border-b-2', 'border-brand-600', 'bg-white', 'font-bold');
+                btn.classList.add('text-slate-600', 'font-semibold');
+            });
+
+            // Show selected panel & highlight button
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            activeBtn.classList.remove('text-slate-600', 'font-semibold');
+            activeBtn.classList.add('text-brand-600', 'border-b-2', 'border-brand-600', 'bg-white', 'font-bold');
+        }
+
+        // Prototype Verification Tool Logic
+        function loadSample(type) {
+            const input = document.getElementById('news-input');
+            if (type === 'hoax') {
+                input.value = "VIRAL!! SEBARKAN KE 10 GRUP SEKARANG JUGA SEBELUM DIHAPUS!! Pemerintah diam-diam membagikan dana bantuan langsung 25 juta tanpa syarat. Klik link bit.ly/bantuan-resmi-2026 dan masukkan nomor NIK KTP Anda sekarang!!";
+            } else {
+                input.value = "Kementerian Komunikasi dan Digital mengingatkan masyarakat untuk mengaktifkan fitur autentikasi dua faktor (2FA) guna mencegah peretasan akun perbankan dan media sosial, sebagaimana tercantum dalam panduan literasi keamanan siber nasional.";
+            }
+            showToast('Contoh teks berhasil dimuat.');
+        }
+
+        function analyzeContent() {
+            const text = document.getElementById('news-input').value.trim();
+            const resultBox = document.getElementById('analysis-result');
+            const statusBadge = document.getElementById('status-badge');
+            const checks = document.querySelectorAll('.verify-check:checked').length;
+
+            if (!text) {
+                showToast('Silakan masukkan teks berita atau pesan terlebih dahulu.');
+                return;
+            }
+
+            // Heuristic Indicators (Educational Purpose Only - Not Automated Truth Claim)
+            const redFlags = [];
+            const lowerText = text.toLowerCase();
+
+            if (/(viral|sebarkan|bagikan ke|sebelum dihapus|penting!!)/i.test(text)) {
+                redFlags.push("Mengandung desakan emosional untuk segera menyebarkan pesan (pola khas pesan berantai/hoaks).");
+            }
+            if ((text.match(/!/g) || []).length >= 3 || text === text.toUpperCase() && text.length > 20) {
+                redFlags.push("Penggunaan huruf kapital berlebihan atau tanda seru beruntun yang bertujuan memancing reaksi impulsif.");
+            }
+            if (/(nik|ktp|pin|password|otp|klik link|bit\.ly|tinyurl)/i.test(lowerText)) {
+                redFlags.push("Berisiko tinggi phishing/pencurian data pribadi (meminta data sensitif atau tautan pendek tidak resmi).");
+            }
+            if (/(diam-diam|konspirasi|tanpa syarat|gratis uang)/i.test(lowerText)) {
+                redFlags.push("Klaim sensasional yang tidak wajar dan tidak merujuk pada siaran pers lembaga resmi.");
+            }
+
+            let htmlOutput = '';
+
+            if (redFlags.length > 0) {
+                statusBadge.className = "px-3 py-1 rounded-full text-xs font-bold bg-red-500/20 text-red-400 border border-red-500/30";
+                statusBadge.textContent = `Terdeteksi ${redFlags.length} Indikator Kewaspadaan`;
+
+                htmlOutput += `<div class="p-3.5 rounded-xl bg-red-950/60 border border-red-800/70 text-red-200 text-xs leading-relaxed">
+                    <strong>Peringatan Indikator Bahasa:</strong> Teks ini memiliki pola manipulasi psikologis atau risiko keamanan digital. <strong>Jangan dibagikan</strong> sebelum diverifikasi.
+                </div>`;
+                htmlOutput += `<ul class="space-y-2 text-xs text-slate-300 list-disc list-inside">`;
+                redFlags.forEach(flag => {
+                    htmlOutput += `<li>${flag}</li>`;
+                });
+                htmlOutput += `</ul>`;
+            } else {
+                statusBadge.className = "px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30";
+                statusBadge.textContent = "Minim Indikator Provokatif";
+
+                htmlOutput += `<div class="p-3.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-200 text-xs leading-relaxed">
+                    Teks tidak menunjukkan pola kalimat sensasional yang mencolok. Namun, <strong>ketiadaan bahasa provokatif bukan jaminan bahwa fakta di dalamnya benar</strong>.
+                </div>`;
+            }
+
+            // Evaluate User Verification Checklist
+            htmlOutput += `<div class="mt-4 pt-3 border-t border-slate-800 text-xs">
+                <p class="font-semibold text-white mb-1">Status Verifikasi Mandiri Anda: ${checks}/3 Langkah Selesai</p>
+                <p class="text-slate-400">${checks < 3 ? 'Anda belum menyelesaikan seluruh langkah verifikasi lateral. Gunakan tautan TurnBackHoax atau CekFakta di bawah untuk memastikan kebenaran sumber.' : 'Bagus! Anda telah menerapkan prinsip kehati-hatian warga digital sebelum menyebarkan informasi.'}</p>
+            </div>`;
+
+            resultBox.innerHTML = htmlOutput;
+        }
+
+        // Interactive Quiz Data & Logic
+        const quizData = [
+            {
+                question: "1. Anggota keluarga mengirim pesan berantai di grup WhatsApp keluarga tentang 'obat herbal penyembuh segala penyakit dalam 1 hari' tanpa sumber medis jelas. Apa tindakan warga digital yang paling tepat?",
+                options: [
+                    "Langsung meneruskan ke grup lain agar membantu banyak orang.",
+                    "Menegur dengan kasar di grup dan mempermalukan pengirimnya.",
+                    "Memeriksa klaim tersebut di situs CekFakta/Kemenkes, lalu membagikan klarifikasi yang santun dan empatik di grup.",
+                    "Mendiamkannya saja karena malas berdebat dengan orang tua."
+                ],
+                correct: 2,
+                explanation: "Tepat! Netizen kritis dan etis tidak membiarkan disinformasi beredar, namun menyampaikannya dengan empati (Sila ke-2) agar tidak memicu konflik keluarga."
+            },
+            {
+                question: "2. Anda melihat kolom komentar di media sosial penuh dengan hujatan dan doxing (penyebaran alamat rumah) terhadap seseorang yang melakukan kesalahan. Sikap Anda?",
+                options: [
+                    "Ikut berkomentar pedas sebagai bentuk sanksi sosial netizen.",
+                    "Tidak ikut menyebarkan data pribadi korban, melaporkan akun penyebar doxing ke platform, dan mengedukasi soal pelanggaran privasi.",
+                    "Menyimpan data pribadi orang tersebut untuk dibagikan di forum lain.",
+                    "Menyukai (like) komentar-komentar yang paling menghina."
+                ],
+                correct: 1,
+                explanation: "Benar! Doxing dan perundungan siber melanggar hukum (UU ITE & UU PDP) serta hak asasi manusia. Warga negara aktif berperan memutus rantai kekerasan digital."
+            },
+            {
+                question: "3. Bagaimana wujud keterlibatan warga negara (civic engagement) yang positif dan konstruktif di era digital?",
+                options: [
+                    "Membuat akun anonim untuk menyerang pendukung pandangan politik yang berbeda.",
+                    "Menggunakan kanal pengaduan publik resmi (seperti SP4N-LAPOR!) disertai bukti foto/lokasi untuk memperbaiki fasilitas umum yang rusak.",
+                    "Mengunggah foto KTP dan tiket pesawat di media sosial sebagai bentuk kebanggaan.",
+                    "Mengikuti tren tantangan berbahaya demi mendapatkan viralitas."
+                ],
+                correct: 1,
+                explanation: "Sangat tepat! Teknologi digital memberdayakan warga negara untuk berpartisipasi mengawasi kebijakan dan pelayanan publik secara solutif dan bertanggung jawab."
+            }
+        ];
+
+        let currentQuiz = 0;
+        let score = 0;
+        let answered = false;
+
+        function renderQuiz() {
+            answered = false;
+            const item = quizData[currentQuiz];
+            document.getElementById('quiz-progress').textContent = `Skenario ${currentQuiz + 1} dari ${quizData.length}`;
+            document.getElementById('quiz-score').textContent = `Skor: ${score}`;
+            document.getElementById('quiz-question').textContent = item.question;
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            document.getElementById('quiz-next-btn').classList.add('hidden');
+
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+
+            item.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'w-full text-left p-4 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50/50 text-sm text-slate-700 font-medium transition';
+                btn.textContent = opt;
+                btn.onclick = () => selectAnswer(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectAnswer(selectedIndex, btnElement) {
+            if (answered) return;
+            answered = true;
+
+            const item = quizData[currentQuiz];
+            const feedback = document.getElementById('quiz-feedback');
+            const allButtons = document.getElementById('quiz-options').querySelectorAll('button');
+
+            allButtons.forEach((btn, idx) => {
+                btn.disabled = true;
+                if (idx === item.correct) {
+                    btn.classList.remove('border-slate-200');
+                    btn.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900', 'font-semibold');
+                } else if (idx === selectedIndex && idx !== item.correct) {
+                    btn.classList.remove('border-slate-200');
+                    btn.classList.add('bg-red-50', 'border-red-400', 'text-red-900');
+                }
+            });
+
+            if (selectedIndex === item.correct) {
+                score += 100;
+                document.getElementById('quiz-score').textContent = `Skor: ${score}`;
+                feedback.className = 'mt-5 p-4 rounded-xl text-sm bg-emerald-50 border border-emerald-200 text-emerald-900';
+            } else {
+                feedback.className = 'mt-5 p-4 rounded-xl text-sm bg-amber-50 border border-amber-200 text-amber-900';
+            }
+
+            feedback.textContent = item.explanation;
+            feedback.classList.remove('hidden');
+
+            const nextBtn = document.getElementById('quiz-next-btn');
+            nextBtn.textContent = currentQuiz < quizData.length - 1 ? 'Lanjut ke Skenario Berikutnya' : 'Ulangi Simulasi';
+            nextBtn.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            if (currentQuiz < quizData.length - 1) {
+                currentQuiz++;
+            } else {
+                currentQuiz = 0;
+                score = 0;
+            }
+            renderQuiz();
+        }
+
+        // Pledge Wall Logic
+        let totalPledges = 128;
+        function submitPledge(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById('pledge-name');
+            const actionSelect = document.getElementById('pledge-action');
+            const list = document.getElementById('pledge-list');
+
+            const name = nameInput.value.trim();
+            const action = actionSelect.value;
+            if (!name) return;
+
+            totalPledges++;
+            document.getElementById('pledge-count').textContent = `${totalPledges} Netizen`;
+
+            const entry = document.createElement('div');
+            entry.className = 'p-3 rounded-xl bg-emerald-950/50 border border-emerald-700/60 flex justify-between items-center';
+            entry.innerHTML = `
+                <div>
+                    <span class="font-bold text-white">${escapeHTML(name)}</span>
+                    <p class="text-slate-300 mt-0.5">Komitmen: ${escapeHTML(action)}</p>
+                </div>
+                <span class="text-emerald-400 font-semibold">✓ Baru</span>
+            `;
+
+            list.insertBefore(entry, list.firstChild);
+            nameInput.value = '';
+            showToast('Terima kasih! Komitmen kewargaan digital Anda telah tercatat.');
+        }
+
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, tag => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag]));
+        }
+
+        // Initialize Quiz on Load
+        window.addEventListener('DOMContentLoaded', renderQuiz);
+    </script>
+</body>
+</html>
